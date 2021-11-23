@@ -2,7 +2,7 @@
 Comparing classification accuracies using different neural network architectures (ResNet-50, VGG-19, Inception-v3, and a custom one) and two remote sensing datasets 
 (SAT-6 and UCMerced). 
 
-Comparison of:  
+Comparing:  
 1 - No augmentation  
 2 - Generic augmentation (cropping, rotatinon, flipping, etc.)  
 3 - Cross-correlation-based simulation algoright  
