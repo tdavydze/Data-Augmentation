@@ -3,6 +3,7 @@ Comparing classification accuracies using different neural network architectures
 (SAT-6 and UCMerced). 
 
 Comparison of:
+
 1 - No augmentation
 2 - Generic augmentation (cropping, rotatinon, flipping, etc.)
 3 - Cross-correlation-based simulation algoright
