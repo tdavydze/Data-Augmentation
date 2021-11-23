@@ -1,0 +1,80 @@
+import numpy as np 
+import tensorflow as tf
+from tensorflow.keras.layers import Conv2D, Dense, Flatten
+from keras.layers.convolutional import MaxPooling2D
+from keras.layers import Input
+from keras.models import Model
+
+x_test = np.load('DATA/Original/x_test.npy')
+y_test = np.load('DATA/Original/y_test.npy')
+x_train = np.load('DATA/Original/x_train.npy')
+y_train = np.load('DATA/Original/y_train.npy')
+input_img = Input(shape=(28, 28, 4))
+conv1 = Conv2D(64, (1,1), padding='same', activation='relu')(input_img)
+conv3 = Conv2D(96, (1,1), padding='same', activation='relu')(input_img)
+conv3 = Conv2D(128, (3,3), padding='same', activation='relu')(conv3)
+conv5 = Conv2D(16, (1,1), padding='same', activation='relu')(input_img)
+conv5 = Conv2D(32, (5,5), padding='same', activation='relu')(conv5)
+pool = MaxPooling2D((3,3), strides=(1,1), padding='same')(input_img)
+pool = Conv2D(32, (1,1), padding='same', activation='relu')(pool)
+layer_out = tf.keras.layers.concatenate([conv1, conv3, conv5, pool], axis=-1)	
+flat_1 = Flatten()(layer_out)
+dense_1 = Dense(1200, activation='relu')(flat_1)
+dense_2 = Dense(600, activation='relu')(dense_1)
+dense_3 = Dense(150, activation='relu')(dense_2)
+output = Dense(6, activation='softmax')(dense_3)
+model = Model([input_img], output)
+model.summary()
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+history = model.fit(x_train, y_train, batch_size=10, epochs=800, verbose=1, validation_split=0.2)
+test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)
+
+    
+    
+x_train = np.load('DATA/Generic/x_train.npy')
+y_train = np.load('DATA/Generic/y_train.npy')
+input_img = Input(shape=(28, 28, 4))
+conv1 = Conv2D(64, (1,1), padding='same', activation='relu')(input_img)
+conv3 = Conv2D(96, (1,1), padding='same', activation='relu')(input_img)
+conv3 = Conv2D(128, (3,3), padding='same', activation='relu')(conv3)
+conv5 = Conv2D(16, (1,1), padding='same', activation='relu')(input_img)
+conv5 = Conv2D(32, (5,5), padding='same', activation='relu')(conv5)
+pool = MaxPooling2D((3,3), strides=(1,1), padding='same')(input_img)
+pool = Conv2D(32, (1,1), padding='same', activation='relu')(pool)
+layer_out = tf.keras.layers.concatenate([conv1, conv3, conv5, pool], axis=-1)
+flat_1 = Flatten()(layer_out)
+dense_1 = Dense(1200, activation='relu')(flat_1)
+dense_2 = Dense(600, activation='relu')(dense_1)
+dense_3 = Dense(150, activation='relu')(dense_2)
+output = Dense(6, activation='softmax')(dense_3)
+model = Model([input_img], output)
+model.summary()
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+history = model.fit(x_train, y_train, batch_size=10, epochs=800, verbose=1, validation_split=0.2)
+test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)
+
+    
+    
+    
+    
+x_train = np.load('DATA/Our_method/x_train.npy')
+y_train = np.load('DATA/Our_method/y_train.npy')    
+input_img = Input(shape=(28, 28, 4))
+conv1 = Conv2D(64, (1,1), padding='same', activation='relu')(input_img)
+conv3 = Conv2D(96, (1,1), padding='same', activation='relu')(input_img)
+conv3 = Conv2D(128, (3,3), padding='same', activation='relu')(conv3)
+conv5 = Conv2D(16, (1,1), padding='same', activation='relu')(input_img)
+conv5 = Conv2D(32, (5,5), padding='same', activation='relu')(conv5)
+pool = MaxPooling2D((3,3), strides=(1,1), padding='same')(input_img)
+pool = Conv2D(32, (1,1), padding='same', activation='relu')(pool)
+layer_out = tf.keras.layers.concatenate([conv1, conv3, conv5, pool], axis=-1)
+flat_1 = Flatten()(layer_out)
+dense_1 = Dense(1200, activation='relu')(flat_1)
+dense_2 = Dense(600, activation='relu')(dense_1)
+dense_3 = Dense(150, activation='relu')(dense_2)
+output = Dense(6, activation='softmax')(dense_3)
+model = Model([input_img], output)
+model.summary()
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+history = model.fit(x_train, y_train, batch_size=10, epochs=800, verbose=1, validation_split=0.2)
+test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)
