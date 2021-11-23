@@ -7,5 +7,5 @@ Comparing:
 2 - Generic augmentation (cropping, rotatinon, flipping, etc.)  
 3 - Cross-correlation-based simulation algoright  
 
-SAT-6 data is located within its respective folder,
+SAT-6 data is located within its respective folder,  
 Due to data size, UCMerced dataset is stored in OneDrive: https://uwy-my.sharepoint.com/:u:/g/personal/tdavydze_uwyo_edu/EUxXOD1yQ59FmDQNoEnemGsB0in4Li1wViqt6PISuHE73A?e=TJ7jnt
