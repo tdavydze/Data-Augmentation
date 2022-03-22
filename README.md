@@ -9,4 +9,4 @@ Comparing:
 
 SAT-6 data is located within its respective folder,  
 Due to data size, UCMerced dataset is stored in OneDrive:  
-https://uwy-my.sharepoint.com/:u:/g/personal/tdavydze_uwyo_edu/EUxXOD1yQ59FmDQNoEnemGsB0in4Li1wViqt6PISuHE73A?e=TJ7jnt
+https://uwy-my.sharepoint.com/:u:/g/personal/tdavydze_uwyo_edu/ETMAZAV_filAja1YfUSnBCwBYKB7huPNNDmDGW9UBHtUbg?e=ltKtP2
