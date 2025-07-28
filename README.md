@@ -13,7 +13,7 @@ We investigate the classification accuracy of the following neural network archi
 Each architecture is tested under three augmentation regimes:
 1. **No Augmentation**: Baseline training on original images.
 2. **Generic Augmentation**: Standard techniques such as cropping, rotation, and flipping.
-3. **Cross-Correlation-Based Simulation (CCSIM)**: Advanced augmentation using cross-correlation-based texture synthesis ([Efros & Freeman, SIGGRAPH](https://www.cs.cmu.edu/~efros/research/image-quilting.html)), implemented in MATLAB.
+3. **Cross-Correlation-Based Simulation (CCSIM)**: Advanced augmentation using cross-correlation-based texture synthesis ([Tahmasebi et al., 2012](https://link.springer.com/article/10.1007/s10596-012-9287-1)), implemented in MATLAB.
 
 ## Datasets
 
